@@ -1,0 +1,227 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geocoder</title>
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.js"></script>
+    <link rel='stylesheet' href="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.css" type='text/css'/>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="controls">
+        <div>
+            <form class="search-area" id="search-form">
+                <input placeholder="search text" id="search-text"/>
+                <button type="submit">Tìm</button>
+            </form>
+        </div>
+
+        <div class="search-results">
+            <div class="result-count">
+
+            </div>
+
+            <div class="result-list">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="map match-parent" id="map">
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .match-parent {
+        width: 80%;
+        min-width: 850px !important;
+        min-height: 500px !important;
+    }
+
+    .wrapper {
+        display: flex;
+        height: 100vh;
+    }
+
+    .controls {
+        width: 20%;
+        padding: 16px 0;
+        background: white;
+        box-shadow: 7px 0px 7px -2px rgba(0,0,0,0.31);
+    }
+
+    .search-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        margin: 0 16px;
+        border-bottom: solid 1px lightgray;
+    }
+
+    .search-area input {
+        width: 100%;
+        margin-right: 8px;
+        height: 24px;
+    }
+
+    .search-area button {
+        height: 30px;
+        width: 70px;
+    }
+
+    .search-results {
+        padding: 16px;
+        overflow: auto;
+        max-height: calc(100vh - 124px);
+    }
+
+    .result-count {
+        margin: 8px 0;
+    }
+
+    .result-item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-bottom: solid 1px lightgray;
+    }
+
+    .result-icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .result-info {
+        padding: 8px;
+        width: 100%;
+    }
+
+    .result-name {
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    vtmapgl.accessToken = '4474ace29cd4d4fa14847303d2a6d6f0';
+
+    const map = new vtmapgl.Map({
+        container: 'map', // container id
+        style: vtmapgl.STYLES.VTRANS, // stylesheet location
+        center: [108.211820, 16.059760], // starting position [lng, lat]
+        zoom: 13, // starting zoom
+        preserveDrawingBuffer: true
+    });
+
+    const geocoderService = new vtmapgl.GeocoderAPIService({accessToken: vtmapgl.accessToken});
+    const markers = [];
+    let bounds;
+    let items = [];
+    let popup;
+
+    $('#search-form').submit((e) => {
+        e.preventDefault();
+        const searchText = $('#search-text').val();
+
+        geocoderService.fetchTextToAddress(searchText, 0, 10, (result, status) => {
+            items = result.items;
+            const total = result.total;
+            removeMarkers(markers);
+            $('.result-list').html('');
+            if (items && items.length > 0) {
+                bounds = new vtmapgl.LngLatBounds();
+                $('.result-count').html(`Tìm thấy <strong>${items.length}/${total}</strong> kết quả`);
+                items.forEach((item, index) => {
+                    const coordinate = item.location;
+                    const itemHtml =
+                        `<div class="result-item" onclick=clickItemHandler(${index})>
+                                <div class="result-icon">
+                                    <img src="https://live.viettelmaps.com.vn:8080/assets/images/ic_location.png" alt="img">
+                                </div>
+
+                                <div class="result-info">
+                                    <div class="result-name">
+                                        ${item.name}
+                                    </div>
+
+                                    <div class="result-address">
+                                        ${item.address}
+                                    </div>
+                                </div>
+                            </div>`;
+
+                    $('.result-list').append(itemHtml);
+
+                    const marker = new vtmapgl.Marker();
+                    marker.setLngLat([coordinate.lng, coordinate.lat]);
+
+                    popup = new vtmapgl.Popup()
+                        .setHTML(getPopupHtml(item));
+                    marker.setPopup(popup);
+                    marker.addTo(map);
+                    markers.push(marker);
+                    bounds.extend([coordinate.lng, coordinate.lat]);
+                });
+            } else {
+                $('.result-count').html('Không tìm thấy kết quả!');
+            }
+
+            map.fitBounds(bounds, { padding: 50});
+        });
+    });
+
+    function removeMarkers(markers) {
+        markers.forEach(item => {
+            item.remove();
+        });
+        markers = [];
+    }
+
+    function removePopups(markers) {
+        markers.forEach(item => {
+            item.getPopup().remove();
+        });
+    }
+
+    function clickItemHandler(index) {
+        const selectedItem = items[index];
+        if (selectedItem) {
+            const coordinate = selectedItem.location;
+            map.flyTo({ center: [coordinate.lng, coordinate.lat], zoom: map.getZoom()});
+            removePopups(markers);
+            markers[index].getPopup().addTo(map);
+        }
+    }
+
+    function getPopupHtml(item) {
+        return `
+                    <div style="font-weight: bold;border-bottom: solid 1px lightgray;padding: 8px 0;">${item.name == null ? '' : item.name}</div>
+                    <div style="margin-top: 8px;">
+                        <span style="font-weight: bold">Địa chỉ: </span>
+                        <span>${item.address == null ? 'N/A' : item.address}</span>
+                    </div>
+
+                    <div>
+                        <span style="font-weight: bold">Phone: </span>
+                        <span>${item.phone == null ? 'N/A' : item.phone}</span>
+                    </div>
+
+                    <div>
+                        <span style="font-weight: bold">Email: </span>
+                        <span>${item.mail == null ? 'N/A' : item.mail}</span>
+                    </div>
+                `;
+    }
+
+
+</script>
+</body>
+</html>

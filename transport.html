@@ -1,0 +1,201 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add custom icons with Markers</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.js"></script>
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-directions/v4.1.0/vtmap-gl-directions.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://maps.viettel.vn/files/sdk/vtmap-gl-directions/v4.1.0/vtmap-gl-directions.css' type='text/css' />
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .match-parent {
+            width: 80%;
+            min-width: 850px !important;
+            min-height: 500px !important;
+        }
+
+        .wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .controls {
+            width: 20%;
+            padding: 16px 0;
+            background: white;
+            box-shadow: 7px 0px 7px -2px rgba(0,0,0,0.31);
+        }
+
+        .options-area {
+            padding: 8px;
+            border-bottom: solid 1px lightgray;
+        }
+
+        .input-form {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .input-form input, .input-form select {
+            width: 200px;
+            height: 24px;
+            padding: 0 8px;
+            margin-left: 8px;
+            box-sizing: border-box;
+        }
+
+        .input-form button {
+            width: 200px;
+            margin-left: 8px;
+        }
+
+        #routing-panel {
+            max-height: calc(100vh - 180px);
+            overflow: auto;
+        }
+        #map{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="controls" style="display: none">
+        <div class="options-area">
+            <div class="input-form">
+                <strong>Phương tiện:</strong>
+                <select id="idTravelMode" onchange="profileChangeHandler()">
+                    <option value="driving">Xe máy</option>
+                    <option value="cycling">Xe đạp</option>
+                </select>
+            </div>
+
+            <div class="input-form">
+                <strong>Ẩn marker:</strong>
+                <input type="checkbox" id="idSuppressMarkers" onchange="hideMarkers()" />
+            </div>
+
+            <div class="input-form">
+                <strong>Đường thay thế:</strong>
+                <input type="checkbox" checked id="idAlternatives" onchange="enableAlternatives()" />
+            </div>
+
+            <div class="input-form">
+                <strong>Thêm điểm:</strong>
+                <button type="checkbox" onclick="addWayPoint()">
+                    Thêm điểm trung gian
+                </button>
+            </div>
+
+            <div class="input-form">
+                <strong>Độ rộng:</strong>
+                <input type="number" id="idRoutingWidth" value="7" onchange="changeRoutingWidth()" />
+            </div>
+
+            <div class="input-form">
+                <strong>Màu đường:</strong>
+                <input id="idRoutingColor" value="#4882c5" onchange="changeRoutingColor()" />
+            </div>
+
+            <div class="input-form">
+                <strong>Độ rộng border:</strong>
+                <input type="number" id="idRoutingStrokeWidth" value="2.5" onchange="changeRoutingStrokeWidth()" />
+            </div>
+
+            <div class="input-form">
+                <strong>Màu border:</strong>
+                <input id="idRoutingStrokeColor" value="#2d5f99" onchange="changeRoutingStrokeColor()" />
+            </div>
+        </div>
+
+        <div id="routing-panel">
+        </div>
+    </div>
+
+    <div class="map match-parent" id="map">
+    </div>
+</div>
+
+<script>
+
+    vtmapgl.accessToken = '4474ace29cd4d4fa14847303d2a6d6f0';
+
+    var map = new vtmapgl.Map({
+        container: 'map',
+        style: vtmapgl.STYLES.VTRANS,
+        center: [106.683161, 10.784892],
+        zoom: 16
+    });
+
+    var direction = new Directions({
+        accessToken: vtmapgl.accessToken,
+        profile: 'cycling',
+        interactive: true,
+        alternatives: true,
+        routingPanel: document.getElementById('routing-panel')
+    });
+
+    direction.onAdd(map);
+
+    map.on('style.load', () => {
+        const waiting = () => {
+            if (!map.isStyleLoaded()) {
+                setTimeout(waiting, 200);
+            } else {
+                direction.setOrigin([106.68309, 10.784739]);
+                direction.setDestination([106.68866802228689, 10.785274343222795]);
+            }
+        };
+        waiting();
+    });
+
+    function profileChangeHandler() {
+        direction.setOptions({profile: $('#idTravelMode').val()});
+    }
+
+    function hideMarkers() {
+        direction.setOptions({markerVisible: !$('#idSuppressMarkers').is(':checked')});
+    }
+
+    function enableAlternatives() {
+        direction.setOptions({alternatives: $('#idAlternatives').is(':checked')});
+    }
+
+    function addWayPoint() {
+        var pt = [106.682657, 10.785214];
+        direction.addWaypoint(0, pt);
+        direction.actions.fetchDirections();
+    }
+
+    function changeRoutingWidth() {
+        direction.setOptions({routingWidth: +$('#idRoutingWidth').val()})
+    }
+
+    function changeRoutingColor() {
+        direction.setOptions({routingColor: $('#idRoutingColor').val()})
+    }
+
+    function changeRoutingStrokeWidth() {
+        direction.setOptions({routingStrokeWidth: +$('#idRoutingStrokeWidth').val()})
+    }
+
+    function changeRoutingStrokeColor() {
+        direction.setOptions({routingStrokeColor: $('#idRoutingStrokeColor').val()})
+    }
+
+    // const directionAPI = new vtmapgl.RoutingService({accessToken: 'TOKEN_HERE'});
+    // directionAPI.fetchDirections('106.68309,10.784739;106.682657,10.785214;106.68866802228689,10.785274343222795', true, 'driving', (result, status) => {
+    //   console.log(result);
+    // });
+</script>
+
+</body>
+</html>
