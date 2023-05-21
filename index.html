@@ -1,0 +1,118 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>VTMap Web API Example</title>
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.css" rel="stylesheet" />
+
+    <!--Thêm css và script của Geocoder-->
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-geocoder/v1.2.1/vtmap-gl-geocoder.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-geocoder/v1.2.1/vtmap-gl-geocoder.css" rel="stylesheet" />
+
+    <!--Thêm css và script của Directions-->
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-directions/v4.1.0/vtmap-gl-directions.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-directions/v4.1.0/vtmap-gl-directions.css" rel="stylesheet" />
+
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-draw/v1.3.0/vtmap-gl-draw.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-draw/v1.3.0/vtmap-gl-draw.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 80px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <pre id="coordinates" class="coordinates">Longitude:<br />Latitude:</pre>
+    <div id="map" style="width: 100%; height: 100%;"></div>
+    <div id="show-draw-features"></div>
+
+    <script type="text/javascript">
+        vtmapgl.accessToken = '4474ace29cd4d4fa14847303d2a6d6f0';
+        // Init map
+        var map = new vtmapgl.Map({
+            container: 'map',
+            style: vtmapgl.STYLES.VTRANS,
+            center: [108.2022, 16.0544], // tọa độ trung tâm [lng, lat]
+            zoom: 5 // mức zoom
+        });
+
+        // list styles map
+        const mapStyleControl = new vtmapgl.MapStyleControl();
+        map.addControl(mapStyleControl);
+
+        // Bắt sự kiện mousemove và hiển thị tọa độ
+        var coordinates = document.getElementById('coordinates');
+        map.on('mousemove', (e) => {
+            const { lng, lat } = e.lngLat;
+            coordinates.innerHTML =
+                'Longitude: ' + lng + '<br />Latitude: ' + lat;
+        });
+
+        // Navigation Control
+        const navigationControl = new vtmapgl.NavigationControl();
+        map.addControl(navigationControl, 'top-left');
+
+        // Locate user
+        const geolocateControl = new vtmapgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        });
+        // Add geolocate control to the map.
+        map.addControl(geolocateControl);
+
+        const scale = new vtmapgl.ScaleControl({
+            maxWidth: 80,
+            unit: 'metric'
+        });
+        map.addControl(scale);
+
+       /* // Thêm điều khiển Directions
+        const direction = new Directions({
+            accessToken: vtmapgl.accessToken,
+            controls: {
+                profileSwitcher: false
+            },
+            profile: 'driving'
+        });
+        map.addControl(direction, 'top-left');
+        map.on('load', () => {
+            direction.setOrigin([105.81943,21.02339]);
+            direction.addWaypoint(0, [105.81592,21.02237]);
+            direction.setDestination([105.81149,21.02478]);
+        })
+*/
+       // Thêm Draw control
+        const draw = new Draw();
+        map.addControl(draw);
+
+        map.on('draw.create', updateArea);
+        map.on('draw.delete', updateArea);
+        map.on('draw.update', updateArea);
+
+    </script>
+</body>
+</html>
