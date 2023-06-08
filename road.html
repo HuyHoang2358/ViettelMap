@@ -1,0 +1,234 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>VTMap Web API Example</title>
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-js/v1.2.1/vtmap-gl.css" rel="stylesheet" />
+
+    <!--Thêm css và script của Geocoder-->
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-geocoder/v1.2.1/vtmap-gl-geocoder.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-geocoder/v1.2.1/vtmap-gl-geocoder.css" rel="stylesheet" />
+
+    <!--Thêm css và script của Directions-->
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-directions/v4.1.0/vtmap-gl-directions.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-directions/v4.1.0/vtmap-gl-directions.css" rel="stylesheet" />
+
+    <script src="https://maps.viettel.vn/files/sdk/vtmap-gl-draw/v1.3.0/vtmap-gl-draw.js"></script>
+    <link href="https://maps.viettel.vn/files/sdk/vtmap-gl-draw/v1.3.0/vtmap-gl-draw.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .coordinates {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            bottom: 80px;
+            left: 10px;
+            padding: 5px 10px;
+            margin: 0;
+            font-size: 11px;
+            line-height: 18px;
+            border-radius: 3px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <pre id="coordinates" class="coordinates">Longitude:<br />Latitude:</pre>
+    <div id="map" style="width: 100%; height: 100%;"></div>
+    <div id="show-draw-features"></div>
+
+    <script type="text/javascript">
+        vtmapgl.accessToken = '4474ace29cd4d4fa14847303d2a6d6f0';
+        // Init map
+        var map = new vtmapgl.Map({
+            container: 'map',
+            style: vtmapgl.STYLES.VTRANS,
+            center: [108.2022, 16.0544], // tọa độ trung tâm [lng, lat]
+            zoom: 5 // mức zoom
+        });
+
+       
+        // Bắt sự kiện mousemove và hiển thị tọa độ
+        var coordinates = document.getElementById('coordinates');
+        map.on('mousemove', (e) => {
+            const { lng, lat } = e.lngLat;
+            coordinates.innerHTML =
+                'Longitude: ' + lng + '<br />Latitude: ' + lat;
+        });
+
+        // Navigation Control
+        const navigationControl = new vtmapgl.NavigationControl();
+        map.addControl(navigationControl, 'top-left');
+
+    
+        
+        map.on('load', () => {
+            map.addSource('route1', {
+                'type': 'geojson',
+                'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                    [108.20624277777101, 16.05887083404104],
+                    [108.2082186183777, 16.05951280643994],
+                    ]
+                }
+                }
+            });
+            map.addSource('route2', {
+                'type': 'geojson',
+                'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                    [108.2082186183777, 16.05951280643994],
+                    [108.21126734259035, 16.060072295882065],
+                    ]
+                }
+                }
+            });
+            map.addSource('route3', {
+                'type': 'geojson',
+                'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                    [108.21126734259035, 16.060072295882065],
+                    [108.21569109259033, 16.06053142543811],
+                    ]
+                }
+                }
+            });
+            map.addSource('route4', {
+                'type': 'geojson',
+                'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                    [108.21569109259033, 16.06053142543811],
+                    [108.21867717855835, 16.06092869353341],
+                    ]
+                }
+                }
+            });
+            map.addSource('route5', {
+                'type': 'geojson',
+                'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                    [108.21867717855835, 16.06092869353341],
+                    [108.22180100462342, 16.061003606546272],
+                    [108.22410943914794, 16.061078519530877]
+                    ]
+                }
+                }
+            });
+            map.addLayer({
+                'id': 'route1',
+                'type': 'line',
+                'source': 'route1',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#1e69e3',
+                    'line-width': 8
+                }
+            });
+            map.addLayer({
+                'id': 'route2',
+                'type': 'line',
+                'source': 'route2',
+                'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                'paint': {
+                'line-color': '#eb1b0c',
+                'line-width': 8
+                }
+            });
+            map.addLayer({
+                'id': 'route3',
+                'type': 'line',
+                'source': 'route3',
+                'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                'paint': {
+                'line-color': '#10e610',
+                'line-width': 8
+                }
+            });
+            map.addLayer({
+                'id': 'route4',
+                'type': 'line',
+                'source': 'route4',
+                'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                'paint': {
+                'line-color': '#10e610',
+                'line-width': 8
+                }
+            });
+            map.addLayer({
+                'id': 'route5',
+                'type': 'line',
+                'source': 'route5',
+                'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                'paint': {
+                'line-color': '#ff9900',
+                'line-width': 8
+                }
+            });
+
+            console.log(map)
+            console.log(map.getLayer('route2'))
+            console.log(map.getPaintProperty('route2', 'line-color'))
+
+            
+            function change_color(id){
+                const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                let new_color = "#" + randomColor;
+                map.setPaintProperty(id, 'line-color', new_color);
+            }
+            setInterval(function() {
+                change_color("route1");
+                change_color("route2");
+                change_color("route3");
+                change_color("route4");
+            }, 500);
+        });
+       
+    </script>
+</body>
+</html>
