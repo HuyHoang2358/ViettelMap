@@ -1,0 +1,577 @@
+[
+    {
+        "lat": "16.094417056712132",
+        "lon": "108.21739761770026",
+        "address": "Vịnh Đà Nẵng"
+    },
+    {
+        "lat": "16.118399157298803",
+        "lon": "108.2138452376855",
+        "address": null
+    },
+    {
+        "lat": "16.118942272952022",
+        "lon": "108.21368293579759",
+        "address": "QL14B, Phường Thọ Quang, Quận Sơn Trà, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.121642565963743",
+        "lon": "108.21281833244547",
+        "address": "Phường Thọ Quang, Quận Sơn Trà, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.179206266928393",
+        "lon": "108.15328188480086",
+        "address": "Phường Hòa Hiệp Bắc, Quận Liên Chiểu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.183436447708424",
+        "lon": "108.13202191287373",
+        "address": "Đèo Hải Vân, Phường Hòa Hiệp Bắc, Quận Liên Chiểu, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.18375575905178",
+        "lon": "108.12615118862637",
+        "address": "Thị trấn Lăng Cô, Huyện Phú Lộc, Tỉnh Thừa Thiên Huế, Việt Nam"
+    },
+    {
+        "lat": "16.181857895039936",
+        "lon": "108.10453016403265",
+        "address": "Hầm Hải Vân, Phường Hòa Hiệp Bắc, Quận Liên Chiểu, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.17865717631053",
+        "lon": "108.09264693577394",
+        "address": "Xã Hòa Bắc, Huyện Hòa Vang, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.140600296735006",
+        "lon": "108.04383823490338",
+        "address": "Bầu Bàng, Hòa Bắc, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.13367020433716",
+        "lon": "108.03987298175583",
+        "address": "Cao tốc La Sơn - Túy Loan, Xã Hòa Bắc, Huyện Hòa Vang, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.132653774388512",
+        "lon": "108.03935884164625",
+        "address": "TL601, Xã Hòa Bắc, Huyện Hòa Vang, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.101189619982335",
+        "lon": "108.03051060539403",
+        "address": "Xã Hòa Ninh, Huyện Hòa Vang, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.05658630870476",
+        "lon": "108.03861265767767",
+        "address": "Hòa Ninh, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.02639289082425",
+        "lon": "108.06189990170172",
+        "address": "Đ. 602, Hòa Ninh, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.021765349191448",
+        "lon": "108.06783481538463",
+        "address": "Xã Hòa Phú, Huyện Hòa Vang, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.016443609799307",
+        "lon": "108.07615248663221",
+        "address": "Xã Hòa Nhơn, Huyện Hòa Vang, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.011771673590776",
+        "lon": "108.085549256463",
+        "address": "Bà Nà - Suối Mơ, Xã Hòa Nhơn, Huyện Hòa Vang, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.003964215500556",
+        "lon": "108.12085893833508",
+        "address": "Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.003935815642343",
+        "lon": "108.12556322272742",
+        "address": "Thái Lai, Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.003983738668715",
+        "lon": "108.1273268186349",
+        "address": "Xã Hòa Phong, Huyện Hòa Vang, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.00573151807222",
+        "lon": "108.14249194709987",
+        "address": "Hồ Chí Minh, Xã Hòa Nhơn, Huyện Hòa Vang, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.007033143424",
+        "lon": "108.14821388635654",
+        "address": "Cao tốc Đà Nẵng - Quảng Ngãi, Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.007182247397832",
+        "lon": "108.1487811503881",
+        "address": "Trường Sơn, Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.007490714044337",
+        "lon": "108.14991269733797",
+        "address": "QL14B, Xã Hòa Nhơn, Huyện Hòa Vang, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.00781281813903",
+        "lon": "108.15104012063232",
+        "address": "QL14B, Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.008148508817936",
+        "lon": "108.15216324223792",
+        "address": "Gò Lăng 2, Xã Hòa Nhơn, Huyện Hòa Vang, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.011093561720934",
+        "lon": "108.16043175731951",
+        "address": "Hòa Nhơn, Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.013979970257804",
+        "lon": "108.16681588879361",
+        "address": "307 Trường Sơn, Hòa Nhơn, Hòa Vang, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.016157500505933",
+        "lon": "108.17093836600561",
+        "address": "Phường Hòa Phát, Quận Cẩm Lệ, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.01884152436208",
+        "lon": "108.17543331016796",
+        "address": "Phường Hòa Thọ Tây, Quận Cẩm Lệ, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.026020543700998",
+        "lon": "108.18525573224343",
+        "address": "Phước Tường 1, Phường Hòa Phát, Quận Cẩm Lệ, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.026767901117626",
+        "lon": "108.18613802068272",
+        "address": "Hà Huy Tập, Hòa Phát, Cẩm Lệ, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.027145559776358",
+        "lon": "108.18657548202935",
+        "address": "Phước Tường 1, Hòa Phát, Cẩm Lệ, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.02752585189113",
+        "lon": "108.18701046506797",
+        "address": "Tôn Đản, Phường Hòa Phát, Quận Cẩm Lệ, Thành phố Đà Nẵng"
+    },
+    {
+        "lat": "16.029466285235298",
+        "lon": "108.18914760806949",
+        "address": "974 Trường Chinh, Phường Hòa Phát, Quận Cẩm Lệ, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.029862059210366",
+        "lon": "108.18956736411151",
+        "address": "1111 Trường Chinh, Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.030260359398728",
+        "lon": "108.18998452373111",
+        "address": "K01/27 Lê trọng tấn, Hòa Thuận Tây, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.030661170076172",
+        "lon": "108.19039907045958",
+        "address": "Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.03523118473704",
+        "lon": "108.19478202813175",
+        "address": "Phường An Khê, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.050526851214958",
+        "lon": "108.20582171299175",
+        "address": "Duy Tân, Quận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.051022869387747",
+        "lon": "108.20610341577384",
+        "address": "148 Duy Tân, Hòa Thuận Tây, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.05152057838128",
+        "lon": "108.20638186931852",
+        "address": "K41/12/3 Đặng Thùy Trâm, Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.052019958546854",
+        "lon": "108.20665706263293",
+        "address": "146 Duy Tân, Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.054033795662836",
+        "lon": "108.20772501824418",
+        "address": "2 Nguyễn Hữu Thọ, Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.054541234676307",
+        "lon": "108.20798375003386",
+        "address": "Nguyễn Hữu Thọ, P. Hòa Thuận TâyQuận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.055050225611485",
+        "lon": "108.20823915835376",
+        "address": "2 Nguyễn Hữu Thọ, Hòa Thuận Tây, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.055560748374273",
+        "lon": "108.2084912331208",
+        "address": "21 Nguyễn Hữu Thọ, Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.056072782810112",
+        "lon": "108.20873996438348",
+        "address": "340 Nguyễn Tri Phương, Phường Hòa Thuận Tây, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.05658630870476",
+        "lon": "108.20898534232234",
+        "address": "106 Phạm Văn Nghị, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.05710130578509",
+        "lon": "108.20922735725026",
+        "address": "52/3A Đường Phạm Văn Nghị, Phường Thạc Gián, Quận Thanh Khê, Đà Nẵng"
+    },
+    {
+        "lat": "16.0576177537199",
+        "lon": "108.20946599961292",
+        "address": "45 Phạm Văn Nghị, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.058135632120706",
+        "lon": "108.20970125998912",
+        "address": "43 Phạm Văn Nghị, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.058654920542565",
+        "lon": "108.20993312909117",
+        "address": "74 Trần Tống, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.059175598484853",
+        "lon": "108.21016159776529",
+        "address": "36 Đào Duy Anh, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.059697645392095",
+        "lon": "108.21038665699194",
+        "address": "157 Nguyễn Văn Linh, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.060221040654778",
+        "lon": "108.21060829788615",
+        "address": "189 Nguyễn Văn Linh, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.06074576361015",
+        "lon": "108.21082651169792",
+        "address": "150 Hàm Nghi, Phường Thạc Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.061271793543046",
+        "lon": "108.21104128981254",
+        "address": "139 Hàm Nghi, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.061799109686707",
+        "lon": "108.21125262375095",
+        "address": "113 Hàm Nghi, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.062327691223594",
+        "lon": "108.21146050517002",
+        "address": "5 Đỗ Quang, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.062857517286215",
+        "lon": "108.21166492586299",
+        "address": "K01, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.06338856695794",
+        "lon": "108.21186587775965",
+        "address": "35-37 Quang Dũng, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.063920819273843",
+        "lon": "108.21206335292676",
+        "address": "15 Bàu Hạc 3, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.06445425322151",
+        "lon": "108.21225734356835",
+        "address": "26 Bàu Hạc 1, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.06498884774188",
+        "lon": "108.21244784202601",
+        "address": "Hùng Vương, Quận Thanh Khê Đà Nẵng"
+    },
+    {
+        "lat": "16.06552458173008",
+        "lon": "108.21263484077919",
+        "address": "Kiệt 325 Hùng Vương, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.066061434036254",
+        "lon": "108.21281833244547",
+        "address": "4, TTTM Parkson, 255 - 257 Hùng Vương Quận Thanh Khê Đà Nẵng"
+    },
+    {
+        "lat": "16.066599383466382",
+        "lon": "108.21299830978093",
+        "address": "255-257 Hùng Vương, Phường Vĩnh Trung, Quận Thanh Khê, Đà Nẵng"
+    },
+    {
+        "lat": "16.067138408783148",
+        "lon": "108.21317476568038",
+        "address": "322 Hùng Vương, Phường Vĩnh Trung, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.067678488706754",
+        "lon": "108.21334769317762",
+        "address": "Hùng Vương, Phường Vĩnh Trung, Quận Thanh Khê, Đà Nẵng"
+    },
+    {
+        "lat": "16.06821960191577",
+        "lon": "108.2135170854458",
+        "address": "Đào Duy Từ, Quận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.068761727047974",
+        "lon": "108.21368293579759",
+        "address": "Ông Ích Khiêm, Quận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.069304842701193",
+        "lon": "108.2138452376855",
+        "address": "211 Ong Ich Khiem Street, Phường Hải Châu II, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.069848927434148",
+        "lon": "108.21400398470213",
+        "address": "Group 58 Cau Vong, 225 Ong Ich Khiem Street, Phường Hải Châu II, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.07039395976731",
+        "lon": "108.21415917058042",
+        "address": "Lê Duẩn, P. Thạch ThangQuận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.070939918183733",
+        "lon": "108.21431078919389",
+        "address": "259 Trần Cao Vân, Phường Thạch Thang, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.071486781129913",
+        "lon": "108.21445883455691",
+        "address": "7 Hải Phòng, Phường Thạch Thang, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.07203452701664",
+        "lon": "108.21460330082489",
+        "address": "Hải Phòng, Quận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.072583134219844",
+        "lon": "108.21474418229457",
+        "address": "136/10 Hải Phòng, Phường Thạch Thang, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.07313258108145",
+        "lon": "108.21488147340416",
+        "address": "Cấp cứu và khám bệnh Quang Trung, Phường Thạch Thang, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.073682845910238",
+        "lon": "108.21501516873366",
+        "address": "154 Quang Trung, Thạch Thang, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.07423390698269",
+        "lon": "108.21514526300501",
+        "address": "137 Quang Trung, Phường Thạch Thang, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.07478574254387",
+        "lon": "108.21527175108231",
+        "address": "245 Đường Đống Đa, Phường Thạch Thang, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.075338330808243",
+        "lon": "108.21539462797202",
+        "address": "231 Đống Đa, Phường Thạch Thang, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.075891649960578",
+        "lon": "108.21551388882317",
+        "address": "213 Đống Đa, Thạch Thang, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.076445678156777",
+        "lon": "108.21562952892755",
+        "address": "272 Đống Đa, Phường Thanh Bình, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.07700039352476",
+        "lon": "108.2157415437199",
+        "address": "111 Lý Tự Trọng, Phường Thanh Bình, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.077555774165308",
+        "lon": "108.21584992877804",
+        "address": "Lý Tự Trọng, Phường Thuận Phước, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.078111798152953",
+        "lon": "108.21595467982313",
+        "address": "132 Lý Tự Trọng, Phường Thuận Phước, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.078668443536813",
+        "lon": "108.21605579271979",
+        "address": "Phường Thuận Phước, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.079225688341484",
+        "lon": "108.21615326347623",
+        "address": "76 Đầm Rong 1, Phường Thuận Phước, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.079783510567896",
+        "lon": "108.21624708824449",
+        "address": "43 Nguyễn Đôn Tiết, Thanh Bình, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.08034188819418",
+        "lon": "108.21633726332051",
+        "address": "26 Đầm Rong 2, Phường Thanh Bình, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.080900799176547",
+        "lon": "108.21642378514436",
+        "address": "Nguyễn Đôn Tiết, P. Hải Châu Quận Hải Châu Đà Nẵng"
+    },
+    {
+        "lat": "16.081460221450147",
+        "lon": "108.21650665030029",
+        "address": "29 Lương Ngọc Quyến, Phường Thanh Bình, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.082020132929944",
+        "lon": "108.21658585551691",
+        "address": "124 Hải Hồ, Thanh Bình, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.082580511511594",
+        "lon": "108.21666139766737",
+        "address": "127 Hải Hồ, Thanh Bình, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.08314133507231",
+        "lon": "108.21673327376936",
+        "address": "138 Mai Am, Thanh Bình, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.083702581471737",
+        "lon": "108.21680148098537",
+        "address": "129 Mai Lão Bạng, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.08426422855283",
+        "lon": "108.21686601662267",
+        "address": "111 Mai Lão Bạng, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.084826254142722",
+        "lon": "108.2169268781335",
+        "address": "108 Mai Lao Bang Street, Phường Thuận Phước, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.085388636053608",
+        "lon": "108.21698406311518",
+        "address": "85 Hàn Mặc Tử, Phường Thuận Phước, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.085951352083608",
+        "lon": "108.21703756931011",
+        "address": "29 Lê Khắc Cần, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.08651438001766",
+        "lon": "108.21708739460598",
+        "address": "139 3 Tháng 2, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.087077697628388",
+        "lon": "108.21713353703576",
+        "address": "Nguyễn Hữu Cảnh, Phường Thuận Phước, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.087641282676973",
+        "lon": "108.21717599477783",
+        "address": "70 Nguyễn Văn Thủ, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.08820511291404",
+        "lon": "108.21721476615605",
+        "address": "6 Phạm Ngọc Thạch, Phường Thuận Phước, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.088769166080542",
+        "lon": "108.21724984963977",
+        "address": "22 Phạm Ngọc Thạch, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.089333419908627",
+        "lon": "108.21728124384396",
+        "address": "Nguyễn Đức Cảnh, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.089897852122512",
+        "lon": "108.21730894752922",
+        "address": "74 Hoàng Tích Trí, Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.09046244043939",
+        "lon": "108.21733295960186",
+        "address": "164 Xuân Diệu, Phường Thuận Phước, Quận Hải Châu, Thành phố Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.092156919092606",
+        "lon": "108.2173828373935",
+        "address": "Nhu Nguyet Street, Phường Thuận Phước, Quận Hải Châu, Đà Nẵng"
+    },
+    {
+        "lat": "16.092721908883206",
+        "lon": "108.21739207499405",
+        "address": "Thuận Phước, Hải Châu, Đà Nẵng, Việt Nam"
+    },
+    {
+        "lat": "16.093286943287865",
+        "lon": "108.21739761770026",
+        "address": "Như Nguyệt, Phường Thuận Phước, Quận Hải Châu, Thành phố Đà Nẵng"
+    }
+]
