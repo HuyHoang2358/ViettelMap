@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Visualize Data</title>
+    <script src="https://files-maps.viettel.vn/sdk/vtmap-gl-js/v1.13.1/vtmap-gl.js"></script>
+    <link href="https://files-maps.viettel.vn/sdk/vtmap-gl-js/v1.13.1/vtmap-gl.css" rel="stylesheet" />
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <pre id="coordinates" class="coordinates">Longitude:<br />Latitude:</pre>
+    <div id="map" style="width: 100%; height: 100%;"></div>
+    <div id="show-draw-features"></div>
+
+    <script type="text/javascript">
+        vtmapgl.accessToken = '4474ace29cd4d4fa14847303d2a6d6f0';
+        // Init map
+        var map = new vtmapgl.Map({
+            container: 'map',
+            style: vtmapgl.STYLES.VTRANS,
+            center: [108.2022, 16.0544], // tọa độ trung tâm [lng, lat]
+            zoom: 5 // mức zoom
+        });
+
+        // list styles map
+        const mapStyleControl = new vtmapgl.MapStyleControl();
+        map.addControl(mapStyleControl);
+        
+
+        function add_point(point){
+            new vtmapgl.Marker()
+            .setLngLat([point["lon"], point["lat"]])
+            .addTo(map);
+        }
+        function add_circle(center_point, radius){
+            const circle = new vtmapgl.Circle({
+                center: [center_point["lon"], center_point["lat"]],
+                radius: radius,
+                strokeColor: "#0000FF",
+                strokeOpacity: 0.1,
+                strokeWeight: 4,
+            }).addTo(map);
+        }
+
+        fetch("data/points.json")
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json(); // Chuyển dữ liệu JSON sang JavaScript object
+            })
+            .then(data => {
+                // Xử lý dữ liệu ở đây
+                console.log(data); // In dữ liệu ra console
+                map.on('style.load', () => {
+                    add_point(data["center_point"][0]);
+                    add_circle(data["center_point"][0],data["radius"][0] )
+                    for(let i=0; i< data["points"].length; i++){
+                        add_point(data["points"][i]);
+                    }
+                });
+               
+                map.flyTo({
+                    center: [data["center_point"][0]["lon"], data["center_point"][0]["lat"]],
+                    zoom: 15,
+                    speed: 1,
+                    curve: 1
+                });
+                
+            })
+
+    </script>
+</body>
+</html>
